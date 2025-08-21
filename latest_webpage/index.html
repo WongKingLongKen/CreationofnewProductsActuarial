@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actuarial Product Management Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-chart-line logo-icon"></i>
+                <h1>Actuarial Product Management Tool</h1>
+            </div>
+            <p class="subtitle">CSV Insurance Product Code Conversion</p>
+        </header>
+
+        <div class="card">
+            <h2 class="card-title"><i class="fas fa-file-csv"></i> Upload CSV File</h2>
+            <div class="form-group">
+                <label for="fileInput">Select CSV File</label>
+                <input type="file" id="fileInput" accept=".csv">
+                <div class="file-requirements">
+                    <p><strong>File Requirements:</strong></p>
+                    <ul>
+                        <li>Only CSV files are supported</li>
+                        <li>File should contain insurance product data</li>
+                        <li>First row should contain headers (optional)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="outputPath">Output Directory</label>
+                <input type="text" id="outputPath" placeholder="C:\Output\Directory">
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title"><i class="fas fa-exchange-alt"></i> Product Code Mappings</h2>
+            <div class="mapping-pairs">
+                <div class="mapping-row" style="grid-template-columns: 1fr 1fr auto; margin-bottom: 10px;">
+                    <div class="mapping-header">Original Plan Code</div>
+                    <div class="mapping-header">New Plan Code</div>
+                    <div class="mapping-header">Action</div>
+                </div>
+                <div class="mapping-row">
+                    <input type="text" class="original-code" placeholder="e.g., CGG01A">
+                    <input type="text" class="new-code" placeholder="e.g., CGK01A">
+                    <button class="btn btn-remove remove-pair"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="mapping-row">
+                    <input type="text" class="original-code" placeholder="e.g., CGG01M">
+                    <input type="text" class="new-code" placeholder="e.g., CGK01M">
+                    <button class="btn btn-remove remove-pair"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="add-pair">
+                <button class="btn" id="addMapping"><i class="fas fa-plus"></i> Add Another Mapping</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title"><i class="fas fa-table"></i> CSV File Preview</h2>
+            <div class="file-preview">
+                <div class="preview-info">
+                    <p>Upload a CSV file to see preview</p>
+                    <p id="rowCount"></p>
+                </div>
+                <div id="tableContainer" style="max-height: 400px; overflow-y: auto;">
+                    <table id="previewTable" style="display: none;">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn" id="resetBtn"><i class="fas fa-redo"></i> Reset</button>
+            <button class="btn btn-gold" id="processBtn"><i class="fas fa-cogs"></i> Process CSV File</button>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Use This Tool</h3>
+            <ol>
+                <li>Upload a CSV file containing insurance product data</li>
+                <li>Set the output directory where processed files will be saved</li>
+                <li>Define the product code mappings (original to new codes)</li>
+                <li>Review the file preview to ensure data is correctly loaded</li>
+                <li>Click "Process CSV File" to execute the conversion</li>
+                <li>Download the processed file from the output directory</li>
+            </ol>
+        </div>
+
+        <footer>
+            <p>© 2024 Actuarial Product Management Tool | Ken Wong @seishun</p>
+        </footer>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
