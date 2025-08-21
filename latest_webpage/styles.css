@@ -1,0 +1,281 @@
+:root {
+    --hkust-blue: #002147;
+    --hkust-gold: #B3A369;
+    --light-blue: #2c3e50;
+    --light-gold: #d4af37;
+    --light-gray: #f5f7fa;
+    --dark-gray: #34495e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--hkust-blue) 0%, var(--light-blue) 100%);
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    padding: 30px 0;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo-icon {
+    font-size: 36px;
+    color: var(--hkust-gold);
+    margin-right: 15px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--hkust-gold);
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.card-title {
+    color: var(--hkust-blue);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--hkust-gold);
+    display: flex;
+    align-items: center;
+}
+
+.card-title i {
+    margin-right: 10px;
+    color: var(--hkust-gold);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+input[type="file"],
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="file"]:focus,
+input[type="text"]:focus {
+    border-color: var(--hkust-blue);
+    outline: none;
+}
+
+.btn {
+    background: var(--hkust-blue);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn:hover {
+    background: var(--light-blue);
+}
+
+.btn-gold {
+    background: var(--hkust-gold);
+}
+
+.btn-gold:hover {
+    background: var(--light-gold);
+}
+
+.btn-remove {
+    background: #e74c3c;
+    padding: 10px 15px;
+}
+
+.btn-remove:hover {
+    background: #c0392b;
+}
+
+.mapping-pairs {
+    margin-bottom: 20px;
+}
+
+.mapping-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.mapping-header {
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: 10px;
+}
+
+.add-pair {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.file-preview {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--hkust-blue);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.instructions {
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.instructions h3 {
+    color: var(--hkust-blue);
+    margin-bottom: 15px;
+}
+
+.instructions ol {
+    margin-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+.preview-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.preview-info span {
+    font-weight: 600;
+    color: var(--hkust-blue);
+}
+
+.file-requirements {
+    background-color: #ffeaa7;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.file-requirements ul {
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .mapping-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .preview-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
